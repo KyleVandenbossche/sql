@@ -1,0 +1,17 @@
+db.people.find( ) -- Finds all the people in the database
+
+db.people.count() -- Counts all people in the database and returns number
+
+db.people.find({ state: 'Texas' }) -- Finds all of the objects returns them and references by Texas
+
+db.people.find({ state: 'Texas' }).count( ) -- Counts all of the objects in
+
+db.people.find({ state: 'Texas' , gender: 'Male'}).count( ) -- Returns all of the males in Texas
+
+db.people.find( { $or: [ { state: 'Arizona' }, { state: 'New Mexico' } ] } ) -- Returns all values from states in Arizona and New Mexico
+
+db.people.find({age: {$lt: 40}}).count() -- returns everyone under age of 40
+
+db.people.find({$and: [ {age: {$gte: 40}}, {age: {$lte: 45}}], state: 'Florida', gender: 'Female'}) -- return 40 -45 ages gender female in Florida
+
+db.people.find({first_name: /^H/}).count() -- returns all values that start with h in first_name
